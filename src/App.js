@@ -3,10 +3,17 @@ import './App.css';
 import { service } from './declarations/service'
 
 async function Service() {
-    const res = await service.greet("Hayato");
+    const res = await service.greet("Your name");
     alert(res);
 }
-Service();
+
+function Button() {
+    return (
+        <div style={{ margin: "30px" }}>
+            <button onClick={ Service } style={{ padding: "5px" }}>Call canister</button>
+        </div>
+    )
+}
 
 function App() {
   return (
@@ -24,6 +31,7 @@ function App() {
         >
           Learn React
         </a>
+        <Button />
       </header>
     </div>
   );
